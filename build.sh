@@ -92,6 +92,56 @@ fi
 
 chmod +x "$BINARY_PATH"
 
+# --- App icon ----------------------------------------------------------------
+# Generate AppIcon.icns from the source PNG so the PNG stays the single source
+# of truth. Tolerant: a missing source or tool warns and skips rather than
+# failing the whole build.
+
+ICON_SRC="$SCRIPT_DIR/assets/app-icon-v1.png"
+
+build_icon() {
+	set +e
+	if ! command -v iconutil >/dev/null 2>&1 || ! command -v sips >/dev/null 2>&1; then
+		echo "warning: iconutil/sips not found; building without an app icon." >&2
+		set -e; return
+	fi
+	if [[ ! -f "$ICON_SRC" ]]; then
+		echo "warning: icon source not found at $ICON_SRC; building without an app icon." >&2
+		set -e; return
+	fi
+
+	echo "Generating app icon…"
+	local iconset_parent iconset
+	iconset_parent="$(mktemp -d)"
+	iconset="$iconset_parent/AppIcon.iconset"
+	mkdir -p "$iconset"
+
+	# size:filename pairs for the standard macOS icon set (points @1x and @2x).
+	local specs=(
+		"16:icon_16x16" "32:icon_16x16@2x"
+		"32:icon_32x32" "64:icon_32x32@2x"
+		"128:icon_128x128" "256:icon_128x128@2x"
+		"256:icon_256x256" "512:icon_256x256@2x"
+		"512:icon_512x512" "1024:icon_512x512@2x"
+	)
+	local spec size name
+	for spec in "${specs[@]}"; do
+		size="${spec%%:*}"
+		name="${spec##*:}"
+		sips -z "$size" "$size" "$ICON_SRC" --out "$iconset/$name.png" >/dev/null 2>&1
+	done
+
+	if iconutil -c icns "$iconset" -o "$RESOURCES_DIR/AppIcon.icns" 2>/dev/null; then
+		echo "  AppIcon.icns created."
+	else
+		echo "warning: iconutil failed; building without an app icon." >&2
+	fi
+	rm -rf "$iconset_parent"
+	set -e
+}
+
+build_icon
+
 # --- Sign --------------------------------------------------------------------
 # Ad-hoc signing lets a locally built app launch without Gatekeeper complaints.
 
