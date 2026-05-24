@@ -55,7 +55,9 @@ fi
 # --- 2. Build ----------------------------------------------------------------
 
 bold "Building the app…"
-"$SCRIPT_DIR/build.sh" "${BUILD_ARGS[@]}"
+# Note the guarded expansion: macOS ships bash 3.2, where "${arr[@]}" on an
+# empty array trips `set -u`. ${arr[@]+"${arr[@]}"} expands to nothing safely.
+"$SCRIPT_DIR/build.sh" ${BUILD_ARGS[@]+"${BUILD_ARGS[@]}"}
 
 if [[ ! -d "$APP_BUNDLE" ]]; then
 	echo "error: build did not produce $APP_BUNDLE" >&2
@@ -65,7 +67,7 @@ fi
 # --- 3. Install --------------------------------------------------------------
 
 DEST="$INSTALL_DIR/$APP_NAME.app"
-bold "Installing to $DEST…"
+bold "Installing to ${DEST}…"
 
 if [[ -d "$DEST" ]]; then
 	echo "  Removing existing install…"

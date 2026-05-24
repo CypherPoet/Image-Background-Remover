@@ -25,7 +25,7 @@ if [[ ! -d "$DEST" ]]; then
 	exit 0
 fi
 
-echo "Removing $DEST…"
+echo "Removing ${DEST}…"
 if rm -rf "$DEST" 2>/dev/null; then
 	:
 else
