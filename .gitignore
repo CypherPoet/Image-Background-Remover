@@ -1,0 +1,14 @@
+# Build output
+build/
+
+# Local Claude Code tooling and skill caches (not part of the app)
+.claude/
+
+# macOS
+.DS_Store
+
+# Swift / Xcode
+*.swiftmodule
+*.o
+DerivedData/
+*.xcuserstate
