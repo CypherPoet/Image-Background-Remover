@@ -2,8 +2,11 @@
 	<img src="assets/app-icon-v1-rounded.png" width="200" height="200">
 	<h1>Background Remover</h1>
 	<p>
-		<b>Remove image backgrounds on your Mac — locally, with one click</b>
+		  <b>Remove image backgrounds on your Mac — locally, with one click</b>
 	</p>
+
+[![X](https://img.shields.io/badge/%40cypher__poet-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cypher_poet) [![PayPal](https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/ncp/payment/L6M553P28YPDY) [![Cash App](https://img.shields.io/badge/Cash_App-00C244?style=for-the-badge&logo=cashapp&logoColor=white)](https://cash.app/$CypherPoet) [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/cypherpoet) [![MIT License](https://img.shields.io/badge/MIT_License-ff7300?style=for-the-badge&logo=opensourceinitiative&logoColor=000000)](https://github.com/CypherPoet/Image-Background-Remover/blob/main/LICENSE)
+
 	<br>
 	<br>
 	<br>
@@ -54,14 +57,14 @@ To remove it:
 
 The app exposes the most useful of `rembg`'s models, grouped by subject. The right model depends on what you're cutting out — using the wrong one produces broken results.
 
-| Subject | Use |
-|---|---|
-| People, headshots | **BiRefNet Portrait** (quality) or **U²-Net Human** (speed) |
-| Products, animals, general scenes | **BiRefNet General** (quality) or **U²-Net** (speed) |
-| Hair, fur, plants, glass | **BiRefNet Dichotomous** + alpha matting |
-| Flat 2D / anime art | **IS-Net Anime** (not for photoreal CGI) |
-| Clothing | **U²-Net Clothing** |
-| Large batches | **U²-Net Lite** or **Silueta** |
+| Subject                           | Use                                                         |
+| --------------------------------- | ----------------------------------------------------------- |
+| People, headshots                 | **BiRefNet Portrait** (quality) or **U²-Net Human** (speed) |
+| Products, animals, general scenes | **BiRefNet General** (quality) or **U²-Net** (speed)        |
+| Hair, fur, plants, glass          | **BiRefNet Dichotomous** + alpha matting                    |
+| Flat 2D / anime art               | **IS-Net Anime** (not for photoreal CGI)                    |
+| Clothing                          | **U²-Net Clothing**                                         |
+| Large batches                     | **U²-Net Lite** or **Silueta**                              |
 
 The first time you use a given model, `rembg` downloads its weights (50–400 MB) to `~/.u2net/`. That first run is slow; later runs reuse the cache.
 
@@ -88,14 +91,14 @@ No Xcode project is needed — the app is compiled directly with `swiftc`:
 
 The sources live in [`app/Sources`](app/Sources):
 
-| Path | Role |
-|---|---|
-| `BackgroundRemoverApp.swift` | App entry, window, menu commands |
-| `ContentView.swift` | Main layout, toolbar, importer/exporter, error alerts |
-| `State/AppModel.swift` | Observable session state and orchestration |
-| `Services/RembgService.swift` | Locates and runs the `rembg` CLI |
-| `Models/` | Model catalog, background mode, request definition |
-| `Views/` | Drop zone, preview, options panel, settings |
+| Path                          | Role                                                  |
+| ----------------------------- | ----------------------------------------------------- |
+| `BackgroundRemoverApp.swift`  | App entry, window, menu commands                      |
+| `ContentView.swift`           | Main layout, toolbar, importer/exporter, error alerts |
+| `State/AppModel.swift`        | Observable session state and orchestration            |
+| `Services/RembgService.swift` | Locates and runs the `rembg` CLI                      |
+| `Models/`                     | Model catalog, background mode, request definition    |
+| `Views/`                      | Drop zone, preview, options panel, settings           |
 
 ## License
 
