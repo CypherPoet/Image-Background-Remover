@@ -97,7 +97,12 @@ chmod +x "$BINARY_PATH"
 # of truth. Tolerant: a missing source or tool warns and skips rather than
 # failing the whole build.
 
-ICON_SRC="$SCRIPT_DIR/assets/app-icon-v1.png"
+# The pre-rounded variant carries the macOS squircle + padding baked in, so it
+# looks correct on macOS 15 and earlier (which don't auto-mask app icons) as
+# well as on macOS 26+. To use the original full-bleed art instead, point this
+# at assets/app-icon-v1.png. Regenerate the rounded art with:
+#   swift scripts/make-rounded-icon.swift assets/app-icon-v1.png assets/app-icon-v1-rounded.png
+ICON_SRC="$SCRIPT_DIR/assets/app-icon-v1-rounded.png"
 
 build_icon() {
 	set +e
