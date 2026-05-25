@@ -4,9 +4,13 @@
 	<p>
 		  <b>Remove image backgrounds on your Mac — locally, with one click</b>
 	</p>
-
-[![X](https://img.shields.io/badge/%40cypher__poet-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cypher_poet) [![PayPal](https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/ncp/payment/L6M553P28YPDY) [![Cash App](https://img.shields.io/badge/Cash_App-00C244?style=for-the-badge&logo=cashapp&logoColor=white)](https://cash.app/$CypherPoet) [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/cypherpoet) [![MIT License](https://img.shields.io/badge/MIT_License-ff7300?style=for-the-badge&logo=opensourceinitiative&logoColor=000000)](https://github.com/CypherPoet/Image-Background-Remover/blob/main/LICENSE)
-
+	<p>
+		<a href="https://x.com/cypher_poet"><img alt="X" src="https://img.shields.io/badge/%40cypher__poet-000000?style=for-the-badge&logo=x&logoColor=white"></a>
+		<a href="https://www.paypal.com/ncp/payment/L6M553P28YPDY"><img alt="PayPal" src="https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white"></a>
+		<a href="https://cash.app/$CypherPoet"><img alt="Cash App" src="https://img.shields.io/badge/Cash_App-00C244?style=for-the-badge&logo=cashapp&logoColor=white"></a>
+		<a href="https://buymeacoffee.com/cypherpoet"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000"></a>
+		<a href="https://github.com/CypherPoet/Image-Background-Remover/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/MIT_License-ff7300?style=for-the-badge&logo=opensourceinitiative&logoColor=000000"></a>
+	</p>
 	<br>
 	<br>
 	<br>
