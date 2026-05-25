@@ -1,4 +1,13 @@
-# Background Remover
+<div align="center">
+	<img src="assets/app-icon-v1-rounded.png" width="200" height="200">
+	<h1>Background Remover</h1>
+	<p>
+		<b>Remove image backgrounds on your Mac — locally, with one click</b>
+	</p>
+	<br>
+	<br>
+	<br>
+</div>
 
 A native macOS app that removes the background from an image with one click. It's a SwiftUI front end for [`rembg`](https://github.com/danielgatis/rembg), which runs ONNX segmentation models **locally** — your images never leave your Mac.
 
