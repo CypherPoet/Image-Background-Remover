@@ -1,6 +1,6 @@
 <div align="center">
 	<img src="assets/app-icon-v1-rounded.png" width="200" height="200">
-	<h1>Background Remover</h1>
+	<h1>Image Background Remover</h1>
 	<p>
 		  <b>Remove image backgrounds on your Mac — locally, with one click</b>
 	</p>
